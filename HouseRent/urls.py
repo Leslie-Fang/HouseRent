@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import url,include
 from HouseRent.testview import hello
+from django.contrib import admin
 
 urlpatterns = [
+    url(r'^admin/', admin.site.urls),
     url(r'^$', hello, name='hello'),
     url(r'^polls/',include('polls.urls')),
-
 ]
