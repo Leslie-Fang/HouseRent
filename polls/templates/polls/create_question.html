@@ -3,5 +3,16 @@
     {% csrf_token %}
     <label for="your_name">Your name: </label>
     <input id="your_name" type="text" name="your_name" value="leslie">
-    <input type="submit" value="OK">
+    <br>
+    <input type="submit" value="SUBMIT">
+</form>
+
+
+<p>Pass the name into question_id</p>
+<form action="{% url 'create_now'%}" method="post">
+    {% csrf_token %}
+    <label for="your_name">Input_question_text: </label>
+    <input id="question" type="text" name="your_question_text" value="leslie">
+    <br>
+    <input type="submit" value="SUBMIT">
 </form>
