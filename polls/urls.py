@@ -11,4 +11,9 @@ urlpatterns = [
     url(r'^(?P<question_id>[0-9]+)/$', views.question_detail, name='detail'),
     url(r'^create_question/$', views.create_question, name='create_question'),
     url(r'^create_now/$', views.create_now, name='create_now'),
+    #?P<question_id> pass the parameter into the question_id
+    #.* regular expression
+    url(r'^create_q_wname/(?P<question_id>.*)/$', views.create_q_wname, name='create_q_wname'),
+
+
 ]

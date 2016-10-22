@@ -28,6 +28,12 @@ def create_question(request):
     return render(request,'polls/create_question.html')
 
 def create_now(request):
-    q=Question(question_text="What's next now thrid?", pub_date=timezone.now())
+    a=request.POST['your_question_text']
+    q=Question(question_text=a, pub_date=timezone.now())
+    q.save()
+    return HttpResponse("successfully")
+
+def create_q_wname(request,question_id):
+    q = Question(question_text=question_id, pub_date=timezone.now())
     q.save()
     return HttpResponse("successfully")
